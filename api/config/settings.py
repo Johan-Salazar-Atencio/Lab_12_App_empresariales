@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.staticfiles",
+    "corsheaders",
     "django_filters",
     "rest_framework",
     "rest_framework.authtoken",
@@ -24,6 +25,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -87,3 +89,13 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }
+
+
+# CORS (lab 12): the browser blocks a page from another origin unless the API says it may read the
+# answers. Only the React dev server is allowed, never "*". Another origin can be set with the
+# CORS_ALLOWED_ORIGINS environment variable (comma separated).
+CORS_ALLOWED_ORIGINS = [
+    origin.strip()
+    for origin in os.environ.get("CORS_ALLOWED_ORIGINS", "http://localhost:5173").split(",")
+    if origin.strip()
+]
