@@ -1,0 +1,20 @@
+:root { font-family: system-ui, sans-serif; color: #1f2937; background: #f3f4f6; }
+body { margin: 0; }
+.app { max-width: 760px; margin: 2rem auto; padding: 0 1rem; }
+h1 { margin: 0; }
+.muted { color: #6b7280; }
+.section-head { display: flex; justify-content: space-between; align-items: center; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; }
+th, td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid #e5e7eb; }
+th { background: #e0e7ff; }
+button { background: #4338ca; color: #fff; border: 0; padding: .5rem .9rem; border-radius: 6px; cursor: pointer; }
+button:disabled { opacity: .6; cursor: default; }
+button.danger { background: #b91c1c; }
+button.secondary { background: #6b7280; }
+.error-box { background: #fee2e2; border: 1px solid #fca5a5; color: #7f1d1d; padding: .8rem 1rem; border-radius: 8px; margin: .8rem 0; }
+.error-box p { margin: .4rem 0 .8rem; }
+.skeleton-row { height: 2.4rem; margin-bottom: .5rem; border-radius: 6px; background: linear-gradient(90deg, #e5e7eb 25%, #f9fafb 50%, #e5e7eb 75%); background-size: 200% 100%; animation: shimmer 1.2s infinite; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+form { display: grid; gap: .5rem; background: #fff; padding: 1rem; border-radius: 8px; }
+input { padding: .5rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem; }
+.actions { display: flex; gap: .5rem; }
